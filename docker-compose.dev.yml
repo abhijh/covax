@@ -13,3 +13,7 @@ services:
             - MONGO_USER=abhinav
             - MONGO_PASSWORD=Supru@0111
         command: npm run dev
+    mongo:
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: abhinav
+            MONGO_INITDB_ROOT_PASSWORD: Supru@0111

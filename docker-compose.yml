@@ -12,9 +12,6 @@ services:
             - PORT=3000
     mongo:
         image: mongo
-        environment: 
-            MONGO_INITDB_ROOT_USERNAME: abhinav
-            MONGO_INITDB_ROOT_PASSWORD: Supru@0111
         volumes:
             - mongo-db:/data/db
 
