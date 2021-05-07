@@ -15,6 +15,8 @@ services:
             MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     watchtower:
         image: containrrr/watchtower 
+        dns:
+            - 1.1.1.1
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         environment: 
