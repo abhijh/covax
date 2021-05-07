@@ -20,4 +20,4 @@ services:
         environment: 
             - WATCHTOWER_TRACE=true
             - WATCHTOWER_DEBUG=true
-            - WATCHTOWER_POLL_INTERVAL=10
+            - WATCHTOWER_POLL_INTERVAL=60
