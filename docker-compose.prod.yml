@@ -5,7 +5,6 @@ services:
             - "traefik.http.routers.covax.rule=Host(`covax.abhijh.xyz`)"
             - "traefik.http.routers.covax.tls=true"
             - "traefik.http.routers.covax.tls.certresolver=leresolver"
-            - "traefik.http.services.covax.loadbalancer.server.port=3000"
             - "traefik.enable=true"
     covax: 
         build: 
