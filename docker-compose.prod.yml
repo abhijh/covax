@@ -9,6 +9,8 @@ services:
             - NODE_ENV=production
             - MONGO_USER=${MONGO_USER}
             - MONGO_PASSWORD=${MONGO_PASSWORD}
+        labels:
+            - "com.centurylinklabs.watchtower.scope=covax"
     mongo:
         environment: 
             MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
@@ -23,3 +25,6 @@ services:
             - WATCHTOWER_TRACE=true
             - WATCHTOWER_DEBUG=true
             - WATCHTOWER_POLL_INTERVAL=60
+        command: --scope covax
+        labels:
+            - "com.centurylinklabs.watchtower.scope=covax"
