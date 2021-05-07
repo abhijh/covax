@@ -5,6 +5,7 @@ services:
             context: .
             args:
                 NODE_ENV: production
+        image: abhijh/covax:latest
         environment: 
             - NODE_ENV=production
             - MONGO_USER=${MONGO_USER}
