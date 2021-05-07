@@ -7,7 +7,11 @@ services:
                 NODE_ENV: production
         deploy:
             replicas: 4
-            restart_policy: any
+            restart_policy: 
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 120s
             update_config:
                 parallelism: 2
                 delay: 15s
@@ -22,16 +26,3 @@ services:
         environment: 
             MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
             MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
-    watchtower:
-        image: containrrr/watchtower 
-        dns:
-            - 1.1.1.1
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-        environment: 
-            - WATCHTOWER_TRACE=true
-            - WATCHTOWER_DEBUG=true
-            - WATCHTOWER_POLL_INTERVAL=60
-        command: --scope covax
-        labels:
-            - "com.centurylinklabs.watchtower.scope=covax"
