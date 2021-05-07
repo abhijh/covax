@@ -15,9 +15,11 @@ services:
             MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     watchtower:
         image: containrrr/watchtower 
+        dns:
+            - 1.1.1.1
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         environment: 
             - WATCHTOWER_TRACE=true
             - WATCHTOWER_DEBUG=true
-            - WATCHTOWER_POLL_INTERVAL=10
+            - WATCHTOWER_POLL_INTERVAL=60
