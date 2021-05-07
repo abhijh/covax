@@ -1,0 +1,15 @@
+version: "3"
+services: 
+    covax: 
+        build: 
+            context: .
+            args:
+                NODE_ENV: development
+        volumes:
+            - ./:/app
+            - /app/node_modules
+        environment: 
+            - NODE_ENV=development
+            - MONGO_USER=abhinav
+            - MONGO_PASSWORD=Supru@0111
+        command: npm run dev
