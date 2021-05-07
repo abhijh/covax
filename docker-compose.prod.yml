@@ -22,6 +22,10 @@ services:
             - MONGO_PASSWORD=${MONGO_PASSWORD}
         labels:
             - "com.centurylinklabs.watchtower.scope=covax"
+            - "traefik.http.routers.speedtest.rule=Host(`covax.abhijh.xyz`)"
+            - "traefik.http.routers.speedtest.tls=true"
+            - "traefik.http.routers.speedtest.tls.certresolver=leresolver"
+            - "traefik.enable=true"      
     mongo:
         environment: 
             MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
