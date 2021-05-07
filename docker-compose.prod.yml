@@ -1,6 +1,8 @@
 version: "3"
 services:
     covax: 
+        dns:
+            - 8.8.8.8
         build: 
             context: .
             args:
