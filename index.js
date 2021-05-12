@@ -3,6 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const { MONGO_IP, MONGO_PORT, MONGO_USER, MONGO_PASSWORD } = require("./config/core")
 const reminderRouter = require('./routes/reminderRoutes')
+const reminderService = require('./services/reminderService')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -21,7 +22,8 @@ const connectWithRetry = () => {
         });
 }
 connectWithRetry()
-
+reminderService.scheduleReminders()
+    .then(() => console.log("scheduled reminders"))
 app.enable("trust proxy")
 app.use(express.json())
 app.use(cors({

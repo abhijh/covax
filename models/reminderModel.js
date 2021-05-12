@@ -5,7 +5,7 @@ const reminderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    pinCode: {
+    districtCode: {
         type: Number,
         required: true
     },
