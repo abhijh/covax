@@ -7,6 +7,7 @@ services:
             - "traefik.http.routers.covax.rule=Host(`covax.abhijh.xyz`)"
             - "traefik.http.routers.covax.tls=true"
             - "traefik.http.routers.covax.tls.certresolver=leresolver"
+            - "traefik.http.routers.covax.middlewares=traefik-forward-auth"
             - "traefik.enable=true"
     covax:
         dns: 1.1.1.1
