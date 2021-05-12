@@ -15,6 +15,8 @@ services:
             - NODE_ENV=development
             - MONGO_USER=abhinav
             - MONGO_PASSWORD=Supru@0111
+            - EMAIL_USERNAME=${EMAIL_USERNAME}
+            - EMAIL_PASSWORD=${EMAIL_PASSWORD}    
         command: npm run dev
     mongo:
         environment: 
