@@ -29,7 +29,9 @@ services:
         environment: 
             - NODE_ENV=production
             - MONGO_USER=${MONGO_USER}
-            - MONGO_PASSWORD=${MONGO_PASSWORD}    
+            - MONGO_PASSWORD=${MONGO_PASSWORD}
+            - EMAIL_USERNAME=${EMAIL_USERNAME}
+            - EMAIL_PASSWORD=${EMAIL_PASSWORD}    
     mongo:
         environment: 
             MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
